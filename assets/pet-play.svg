@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760" role="img" aria-labelledby="title desc">
+  <title id="title">Owner and pet playground</title>
+  <desc id="desc">Original comic scene of an owner and pet playing on a bright pet island.</desc>
+  <ellipse cx="520" cy="382" rx="258" ry="322" fill="#ff2c21" stroke="#050505" stroke-width="8"/>
+  <path d="M132 505 C232 379 605 301 833 390 C894 414 907 476 852 518 C704 632 303 692 124 588 C75 559 84 545 132 505Z"
+    fill="#ff2c21" stroke="#050505" stroke-width="8"/>
+  <path d="M196 513 C311 430 626 385 781 443 C641 525 342 577 196 513Z"
+    fill="#3cff53" stroke="#050505" stroke-width="7"/>
+  <g transform="translate(340 226)">
+    <ellipse cx="135" cy="311" rx="118" ry="30" fill="#d91c17" stroke="#050505" stroke-width="6"/>
+    <circle cx="135" cy="90" r="52" fill="#ffd23f" stroke="#050505" stroke-width="7"/>
+    <path d="M90 147 C126 127 160 127 193 147 L181 282 C154 303 113 304 88 282Z" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <path d="M89 184 C124 205 158 205 190 184" fill="none" stroke="#ff2c21" stroke-width="14" stroke-linecap="round"/>
+    <path d="M83 160 L33 216 M190 160 L247 128" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <path d="M100 279 L86 338 M171 279 L188 338" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <path d="M85 338 H55 M188 338 H219" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="119" cy="91" r="6" fill="#050505"/>
+    <circle cx="153" cy="91" r="6" fill="#050505"/>
+    <path d="M125 111 C134 118 144 118 153 111" fill="none" stroke="#050505" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(570 384)">
+    <ellipse cx="124" cy="198" rx="130" ry="35" fill="#d91c17" stroke="#050505" stroke-width="6"/>
+    <ellipse cx="124" cy="120" rx="118" ry="70" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <circle cx="55" cy="93" r="42" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <circle cx="193" cy="93" r="42" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <circle cx="92" cy="116" r="8" fill="#050505"/>
+    <circle cx="156" cy="116" r="8" fill="#050505"/>
+    <path d="M118 132 L130 132 L124 142Z" fill="#050505"/>
+    <path d="M101 151 C112 163 136 163 148 151" fill="none" stroke="#050505" stroke-width="6" stroke-linecap="round"/>
+    <path d="M19 137 C-43 118 -42 48 32 44" fill="none" stroke="#050505" stroke-width="9" stroke-linecap="round"/>
+    <path d="M68 181 L48 229 M180 181 L201 229" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(666 182)" fill="#ffd23f" stroke="#050505" stroke-width="7" stroke-linejoin="round">
+    <path d="M52 12 C90 19 117 52 114 91 C111 128 78 156 40 150 C12 145 -3 121 10 98 C19 82 37 78 51 86 C34 57 34 33 52 12Z"/>
+    <path d="M58 88 L148 28"/>
+  </g>
+  <g fill="#fffaf0" stroke="#050505" stroke-width="8" stroke-linejoin="round">
+    <path d="M99 148 C137 165 180 158 210 126 C211 167 240 197 284 198 C244 218 226 255 238 300 C202 267 154 266 118 299 C130 255 110 218 68 197 C84 184 98 167 99 148Z"/>
+    <path d="M814 124 C828 161 853 176 893 175 C859 195 845 220 849 260 C828 224 802 210 762 214 C792 190 805 163 814 124Z"/>
+  </g>
+</svg>

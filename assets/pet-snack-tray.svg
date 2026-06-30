@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760" role="img" aria-labelledby="title desc">
+  <title id="title">PET PET LAND movie snack tray</title>
+  <desc id="desc">Original comic style purple tray with pet movie snacks: hot dog, fries, ice cream, and a tiny mascot.</desc>
+  <defs>
+    <filter id="drop" x="-12%" y="-12%" width="130%" height="132%">
+      <feDropShadow dx="0" dy="10" stdDeviation="0" flood-color="#050505" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <ellipse cx="628" cy="373" rx="224" ry="324" fill="#7126c9" stroke="#050505" stroke-width="8"/>
+  <path d="M112 472 L622 248 C657 233 707 243 732 273 L858 423 C882 452 872 490 837 503 L304 684 C274 694 237 689 214 669 L82 553 C51 526 69 491 112 472Z"
+    fill="#7126c9" stroke="#050505" stroke-width="8" stroke-linejoin="round" filter="url(#drop)"/>
+  <path d="M151 497 L631 288 C654 278 690 286 708 306 L809 425 C823 442 817 462 795 470 L304 639 C283 646 256 643 239 629 L120 526 C105 512 119 506 151 497Z"
+    fill="none" stroke="#050505" stroke-width="4"/>
+  <path d="M551 335 L753 272 C779 264 806 275 823 297 L849 331 L633 397Z"
+    fill="#a979ee" stroke="#050505" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M424 458 L735 359 C764 350 797 361 816 387 L837 417 L512 522Z"
+    fill="#a979ee" stroke="#050505" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M148 543 L252 506 C272 499 295 504 309 520 L326 540 L212 581C194 587 172 583 159 570Z"
+    fill="#a979ee" stroke="#050505" stroke-width="6" stroke-linejoin="round"/>
+
+  <g transform="translate(507 389) rotate(-9)">
+    <ellipse cx="152" cy="166" rx="190" ry="38" fill="#4b1496" stroke="#050505" stroke-width="7"/>
+    <rect x="11" y="91" width="286" height="96" rx="44" fill="#ffd23f" stroke="#050505" stroke-width="8"/>
+    <rect x="55" y="60" width="241" height="74" rx="37" fill="#ff2c21" stroke="#050505" stroke-width="7"/>
+    <path d="M88 68 C95 100 114 102 120 72 C132 108 157 109 162 75 C177 111 201 111 207 79 C219 108 242 105 252 81"
+      fill="none" stroke="#ffd23f" stroke-width="15" stroke-linecap="round"/>
+    <g fill="#fff3cf">
+      <ellipse cx="63" cy="144" rx="5" ry="3"/>
+      <ellipse cx="95" cy="152" rx="5" ry="3"/>
+      <ellipse cx="135" cy="137" rx="5" ry="3"/>
+      <ellipse cx="181" cy="151" rx="5" ry="3"/>
+      <ellipse cx="231" cy="138" rx="5" ry="3"/>
+      <ellipse cx="267" cy="154" rx="5" ry="3"/>
+    </g>
+  </g>
+
+  <g transform="translate(604 180)">
+    <ellipse cx="119" cy="244" rx="109" ry="31" fill="#4b1496" stroke="#050505" stroke-width="6"/>
+    <path d="M45 73 L192 45 L217 225 C172 259 88 261 43 228Z" fill="#ff2c21" stroke="#050505" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M60 83 C91 112 147 106 185 53" fill="none" stroke="#c81b22" stroke-width="15"/>
+    <g fill="#ffd23f" stroke="#050505" stroke-width="5">
+      <rect x="62" y="3" width="19" height="130" rx="6" transform="rotate(-19 71 68)"/>
+      <rect x="92" y="-23" width="19" height="160" rx="6" transform="rotate(-7 101 57)"/>
+      <rect x="124" y="-34" width="19" height="169" rx="6" transform="rotate(6 133 51)"/>
+      <rect x="155" y="-18" width="19" height="150" rx="6" transform="rotate(17 164 57)"/>
+      <rect x="186" y="8" width="19" height="124" rx="6" transform="rotate(27 195 70)"/>
+      <rect x="36" y="26" width="19" height="108" rx="6" transform="rotate(-28 45 80)"/>
+    </g>
+  </g>
+
+  <g transform="translate(415 180)">
+    <ellipse cx="95" cy="274" rx="94" ry="28" fill="#4b1496" stroke="#050505" stroke-width="6"/>
+    <path d="M46 133 L149 133 L115 261 C104 277 83 277 72 261Z" fill="#ffd23f" stroke="#050505" stroke-width="7" stroke-linejoin="round"/>
+    <path d="M61 154 L138 154 M55 178 L130 178 M51 202 L123 202" stroke="#050505" stroke-width="4"/>
+    <path d="M77 133 L69 253 M111 133 L122 253" stroke="#050505" stroke-width="4"/>
+    <path d="M45 111 C40 80 61 59 87 72 C97 36 136 35 149 70 C179 62 203 86 191 117 C175 160 67 158 45 111Z"
+      fill="#fffaf0" stroke="#050505" stroke-width="7"/>
+    <path d="M73 78 C93 92 97 112 88 136 M118 62 C111 91 120 113 143 132 M158 83 C142 100 141 116 158 136"
+      fill="none" stroke="#ff2c21" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(205 303)">
+    <ellipse cx="104" cy="223" rx="93" ry="27" fill="#4b1496" stroke="#050505" stroke-width="6"/>
+    <rect x="48" y="137" width="112" height="78" rx="22" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <circle cx="104" cy="82" r="64" fill="#ffd23f" stroke="#050505" stroke-width="7"/>
+    <circle cx="104" cy="82" r="92" fill="none" stroke="#050505" stroke-width="4" opacity=".48"/>
+    <circle cx="84" cy="83" r="7" fill="#050505"/>
+    <circle cx="124" cy="83" r="7" fill="#050505"/>
+    <path d="M96 105 C104 112 114 112 122 105" fill="none" stroke="#050505" stroke-width="5" stroke-linecap="round"/>
+    <path d="M82 145 L57 187 M126 145 L151 187" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <path d="M74 211 L60 259 M134 211 L149 259" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <path d="M58 259 H33 M150 259 H176" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <path d="M101 18 C113 -22 153 -16 155 20 C134 22 119 31 106 52Z" fill="#ff2c21" stroke="#050505" stroke-width="6"/>
+    <path d="M126 23 C149 -6 181 15 165 47 C147 38 132 39 114 55Z" fill="#6e2be8" stroke="#050505" stroke-width="6"/>
+  </g>
+
+  <g fill="#fffaf0" stroke="#050505" stroke-width="8" stroke-linejoin="round">
+    <path d="M101 149 C139 166 183 159 213 126 C214 169 244 199 289 200 C248 220 230 258 242 304 C205 270 156 268 119 302 C132 257 112 220 69 199 C86 185 100 168 101 149Z"/>
+    <path d="M822 196 C835 230 858 244 895 243 C864 261 851 284 854 321 C835 288 811 275 774 279 C802 257 814 232 822 196Z"/>
+  </g>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title">
+  <title id="title">Spark star</title>
+  <path d="M60 8 C67 39 81 53 112 60 C81 67 67 81 60 112 C53 81 39 67 8 60 C39 53 53 39 60 8Z"
+    fill="#fffaf0" stroke="#050505" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M60 34 C64 49 71 56 86 60 C71 64 64 71 60 86 C56 71 49 64 34 60 C49 56 56 49 60 34Z"
+    fill="#ffd23f"/>
+</svg>

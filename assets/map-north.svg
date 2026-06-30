@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Northern snack constellation map</title>
+  <desc id="desc">Original replacement star map asset for the locations section.</desc>
+  <rect width="900" height="900" rx="80" fill="#fff3cf" stroke="#050505" stroke-width="8"/>
+  <g fill="none" stroke="#050505" stroke-width="5" stroke-linecap="round">
+    <path d="M155 626 C235 501 336 437 458 432 C555 428 635 367 707 250"/>
+    <path d="M241 206 C332 298 437 325 558 288"/>
+    <path d="M255 735 C372 635 503 592 648 612"/>
+    <path d="M128 353 C239 383 325 367 388 306"/>
+  </g>
+  <g fill="#050505">
+    <circle cx="155" cy="626" r="10"/>
+    <circle cx="458" cy="432" r="10"/>
+    <circle cx="707" cy="250" r="10"/>
+    <circle cx="241" cy="206" r="10"/>
+    <circle cx="558" cy="288" r="10"/>
+    <circle cx="255" cy="735" r="10"/>
+    <circle cx="648" cy="612" r="10"/>
+    <circle cx="128" cy="353" r="10"/>
+    <circle cx="388" cy="306" r="10"/>
+  </g>
+  <g fill="#ff2c21" stroke="#050505" stroke-width="5">
+    <circle cx="315" cy="585" r="24"/>
+    <circle cx="526" cy="246" r="20"/>
+    <circle cx="652" cy="674" r="23"/>
+  </g>
+  <g fill="#ffd23f">
+    <circle cx="101" cy="128" r="5"/>
+    <circle cx="210" cy="438" r="4"/>
+    <circle cx="799" cy="420" r="6"/>
+    <circle cx="731" cy="744" r="5"/>
+    <circle cx="474" cy="767" r="4"/>
+    <circle cx="612" cy="130" r="5"/>
+    <circle cx="350" cy="111" r="4"/>
+  </g>
+  <text x="70" y="830" font-family="Arial Black, Impact, sans-serif" font-size="54" fill="#050505">NORTHERN</text>
+</svg>

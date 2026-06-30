@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 760" role="img" aria-labelledby="title desc">
+  <title id="title">Pet social lounge</title>
+  <desc id="desc">Original comic scene of owners and pets meeting in a social lounge.</desc>
+  <ellipse cx="516" cy="378" rx="258" ry="323" fill="#ff2c21" stroke="#050505" stroke-width="8"/>
+  <path d="M128 505 C237 394 601 315 824 392 C890 415 900 481 843 523 C695 633 305 691 122 587 C74 560 83 545 128 505Z"
+    fill="#ff2c21" stroke="#050505" stroke-width="8"/>
+  <path d="M202 521 C304 445 628 404 775 456 C642 535 341 580 202 521Z"
+    fill="#ffd23f" stroke="#050505" stroke-width="7"/>
+  <g transform="translate(205 259)">
+    <ellipse cx="110" cy="284" rx="100" ry="27" fill="#d91c17" stroke="#050505" stroke-width="6"/>
+    <circle cx="110" cy="78" r="48" fill="#ffd23f" stroke="#050505" stroke-width="7"/>
+    <path d="M73 132 C101 115 131 115 158 132 L148 259 C126 278 94 278 72 259Z" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <path d="M72 167 L28 130 M158 167 L208 125" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="95" cy="78" r="6" fill="#050505"/>
+    <circle cx="125" cy="78" r="6" fill="#050505"/>
+    <path d="M98 99 C106 105 116 105 124 99" fill="none" stroke="#050505" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(597 256)">
+    <ellipse cx="110" cy="286" rx="100" ry="27" fill="#d91c17" stroke="#050505" stroke-width="6"/>
+    <circle cx="110" cy="78" r="48" fill="#b8d9d1" stroke="#050505" stroke-width="7"/>
+    <path d="M72 132 C102 115 132 115 160 132 L149 261 C126 278 94 278 72 261Z" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <path d="M72 166 L23 213 M160 166 L205 211" stroke="#050505" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="96" cy="78" r="6" fill="#050505"/>
+    <circle cx="126" cy="78" r="6" fill="#050505"/>
+    <path d="M99 99 C107 105 117 105 125 99" fill="none" stroke="#050505" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(415 390)">
+    <ellipse cx="87" cy="174" rx="95" ry="28" fill="#d91c17" stroke="#050505" stroke-width="6"/>
+    <ellipse cx="87" cy="96" rx="82" ry="58" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <path d="M28 63 C10 20 49 5 72 41 M145 63 C164 20 124 5 102 41" fill="#fff3cf" stroke="#050505" stroke-width="7"/>
+    <circle cx="61" cy="95" r="7" fill="#050505"/>
+    <circle cx="112" cy="95" r="7" fill="#050505"/>
+    <path d="M80 111 L93 111 L87 121Z" fill="#050505"/>
+    <path d="M68 132 C78 143 96 143 107 132" fill="none" stroke="#050505" stroke-width="6" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(390 154)">
+    <path d="M0 42 C0 18 21 0 50 0 H238 C267 0 288 18 288 42 V121 C288 145 267 163 238 163 H91 L46 205 L54 163 H50 C21 163 0 145 0 121Z"
+      fill="#fff3cf" stroke="#050505" stroke-width="7" stroke-linejoin="round"/>
+    <circle cx="83" cy="82" r="14" fill="#ff2c21"/>
+    <circle cx="144" cy="82" r="14" fill="#3cff53"/>
+    <circle cx="205" cy="82" r="14" fill="#6e2be8"/>
+  </g>
+  <g fill="#fffaf0" stroke="#050505" stroke-width="8" stroke-linejoin="round">
+    <path d="M104 151 C141 168 185 160 215 128 C216 170 245 199 290 200 C249 220 231 258 243 304 C206 270 157 268 120 302 C133 257 113 220 70 199 C86 186 103 169 104 151Z"/>
+    <path d="M810 143 C824 180 849 195 889 194 C855 214 841 239 845 279 C824 243 798 229 758 233 C788 209 801 182 810 143Z"/>
+  </g>
+</svg>

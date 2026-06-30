@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Pet movie night route map</title>
+  <desc id="desc">Original night route map for PET PET LAND activities.</desc>
+  <rect width="900" height="900" rx="80" fill="#ffd23f" stroke="#050505" stroke-width="8"/>
+  <path d="M140 670 C240 550 335 485 425 475 C546 462 641 365 742 184" fill="none" stroke="#1054d8" stroke-width="24" stroke-linecap="round"/>
+  <path d="M166 220 C286 296 380 405 448 548 C488 632 564 694 676 735" fill="none" stroke="#050505" stroke-width="6" stroke-linecap="round"/>
+  <path d="M710 177 C624 264 534 311 441 319 C344 328 270 377 219 468" fill="none" stroke="#050505" stroke-width="6" stroke-linecap="round"/>
+  <path d="M170 705 C274 646 358 638 424 676" fill="none" stroke="#050505" stroke-width="6" stroke-linecap="round"/>
+  <g fill="#ff2c21" stroke="#050505" stroke-width="5">
+    <circle cx="312" cy="426" r="25"/>
+    <circle cx="584" cy="340" r="25"/>
+    <circle cx="716" cy="590" r="25"/>
+  </g>
+  <g fill="#050505">
+    <circle cx="166" cy="220" r="9"/>
+    <circle cx="448" cy="548" r="9"/>
+    <circle cx="676" cy="735" r="9"/>
+    <circle cx="710" cy="177" r="9"/>
+    <circle cx="441" cy="319" r="9"/>
+    <circle cx="219" cy="468" r="9"/>
+  </g>
+  <g fill="#fff3cf">
+    <circle cx="92" cy="525" r="5"/>
+    <circle cx="226" cy="118" r="4"/>
+    <circle cx="813" cy="312" r="6"/>
+    <circle cx="746" cy="766" r="5"/>
+    <circle cx="505" cy="104" r="4"/>
+    <circle cx="348" cy="782" r="5"/>
+  </g>
+  <text x="70" y="785" font-family="'Microsoft YaHei', Arial Black, sans-serif" font-size="45" font-weight="900" fill="#050505">夜场动线</text>
+  <text x="70" y="840" font-family="Arial Black, Impact, sans-serif" font-size="42" fill="#050505">MOVIE ROUTE</text>
+</svg>

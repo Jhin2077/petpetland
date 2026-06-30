@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Southern snack constellation map</title>
+  <desc id="desc">Original replacement star map asset for the locations section.</desc>
+  <rect width="900" height="900" rx="80" fill="#ffd23f" stroke="#050505" stroke-width="8"/>
+  <g fill="none" stroke="#050505" stroke-width="5" stroke-linecap="round">
+    <path d="M166 216 C285 292 365 406 405 558 C428 645 495 702 607 731"/>
+    <path d="M710 177 C621 259 536 301 455 303 C352 306 275 355 225 452"/>
+    <path d="M172 705 C271 644 354 632 421 670"/>
+    <path d="M612 513 C706 530 766 576 793 650"/>
+  </g>
+  <g fill="#050505">
+    <circle cx="166" cy="216" r="10"/>
+    <circle cx="405" cy="558" r="10"/>
+    <circle cx="607" cy="731" r="10"/>
+    <circle cx="710" cy="177" r="10"/>
+    <circle cx="455" cy="303" r="10"/>
+    <circle cx="225" cy="452" r="10"/>
+    <circle cx="172" cy="705" r="10"/>
+    <circle cx="421" cy="670" r="10"/>
+    <circle cx="793" cy="650" r="10"/>
+  </g>
+  <g fill="#ff2c21" stroke="#050505" stroke-width="5">
+    <circle cx="307" cy="414" r="23"/>
+    <circle cx="580" cy="338" r="22"/>
+    <circle cx="718" cy="587" r="24"/>
+  </g>
+  <g fill="#fff3cf">
+    <circle cx="92" cy="525" r="5"/>
+    <circle cx="226" cy="118" r="4"/>
+    <circle cx="813" cy="312" r="6"/>
+    <circle cx="746" cy="766" r="5"/>
+    <circle cx="505" cy="104" r="4"/>
+    <circle cx="348" cy="782" r="5"/>
+    <circle cx="621" cy="455" r="4"/>
+  </g>
+  <text x="70" y="830" font-family="Arial Black, Impact, sans-serif" font-size="54" fill="#050505">SOUTHERN</text>
+</svg>

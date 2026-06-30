@@ -1,0 +1,19 @@
+# Local runtime and tunnel files
+.agents/
+.codex/
+.tools/
+*.log
+*.pid
+.cloudflared-*
+.server-*
+
+# Source captures and raw asset libraries kept only for local editing
+reference/
+素材入库/
+assets/kenney_blocky-characters_20/
+assets/kenney_cube-pets_1.0/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini

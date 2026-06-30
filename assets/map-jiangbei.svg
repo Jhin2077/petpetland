@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-labelledby="title desc">
+  <title id="title">Nanjing Jiangbei pet island map</title>
+  <desc id="desc">Original replacement map asset for PET PET LAND in Nanjing Jiangbei New Area.</desc>
+  <rect width="900" height="900" rx="80" fill="#fff3cf" stroke="#050505" stroke-width="8"/>
+  <path d="M180 730 C260 560 355 451 465 405 C570 361 638 260 704 116" fill="none" stroke="#1054d8" stroke-width="26" stroke-linecap="round"/>
+  <path d="M172 255 C277 333 392 354 517 318 C618 289 687 310 760 382" fill="none" stroke="#050505" stroke-width="6" stroke-linecap="round"/>
+  <path d="M230 635 C354 549 478 515 603 532 C680 542 735 587 769 667" fill="none" stroke="#050505" stroke-width="6" stroke-linecap="round"/>
+  <g fill="#ff2c21" stroke="#050505" stroke-width="5">
+    <circle cx="292" cy="520" r="25"/>
+    <circle cx="548" cy="315" r="25"/>
+    <circle cx="675" cy="607" r="25"/>
+  </g>
+  <g fill="#050505">
+    <circle cx="172" cy="255" r="9"/>
+    <circle cx="517" cy="318" r="9"/>
+    <circle cx="760" cy="382" r="9"/>
+    <circle cx="230" cy="635" r="9"/>
+    <circle cx="603" cy="532" r="9"/>
+    <circle cx="769" cy="667" r="9"/>
+  </g>
+  <g fill="#ffd23f">
+    <circle cx="116" cy="139" r="5"/>
+    <circle cx="238" cy="430" r="4"/>
+    <circle cx="800" cy="504" r="6"/>
+    <circle cx="705" cy="744" r="5"/>
+    <circle cx="462" cy="769" r="4"/>
+    <circle cx="619" cy="132" r="5"/>
+  </g>
+  <text x="70" y="785" font-family="'Microsoft YaHei', Arial Black, sans-serif" font-size="45" font-weight="900" fill="#050505">南京江北新区</text>
+  <text x="70" y="840" font-family="Arial Black, Impact, sans-serif" font-size="42" fill="#050505">PET PET LAND</text>
+</svg>

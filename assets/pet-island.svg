@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-labelledby="title">
+  <title id="title">Pet island decoration</title>
+  <circle cx="250" cy="250" r="205" fill="#ff4f38" stroke="#050505" stroke-width="7"/>
+  <path d="M90 300 C150 236 222 218 297 247 C340 263 379 250 415 209 C401 292 356 355 279 385 C203 414 135 391 90 300Z"
+    fill="#3cff53" stroke="#050505" stroke-width="6"/>
+  <path d="M147 284 C176 255 223 250 263 268 C222 288 183 301 147 284Z" fill="#ffd23f" stroke="#050505" stroke-width="4"/>
+  <path d="M298 283 C330 274 358 262 386 236 C377 279 346 314 303 331Z" fill="#ffd23f" stroke="#050505" stroke-width="4"/>
+  <path d="M238 152 C264 203 264 248 238 288 C213 248 213 203 238 152Z" fill="#fff3cf" stroke="#050505" stroke-width="5"/>
+  <path d="M235 160 C208 198 168 218 113 220 C147 177 187 157 235 160Z" fill="#fff3cf" stroke="#050505" stroke-width="5"/>
+  <path d="M244 160 C284 172 318 202 346 250 C297 244 262 214 244 160Z" fill="#fff3cf" stroke="#050505" stroke-width="5"/>
+  <circle cx="154" cy="121" r="22" fill="#ffd23f" stroke="#050505" stroke-width="5"/>
+  <circle cx="365" cy="137" r="18" fill="#ffd23f" stroke="#050505" stroke-width="5"/>
+</svg>
