@@ -1,5 +1,5 @@
-﻿import * as THREE from "./assets/vendor/three/three.module.js?v=20260630d";
-import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260630d";
+﻿import * as THREE from "./assets/vendor/three/three.module.js?v=20260701a";
+import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260701a";
 
 const stage = document.querySelector("#threeStage");
 const mealStage = document.querySelector(".meal-stage");
@@ -23,6 +23,8 @@ const loader = new GLTFLoader();
 const slideGroups = {};
 const floatingProps = [];
 const processFloatingProps = [];
+const loadedScenes = new Set();
+const sceneBuildPromises = {};
 
 const palette = {
   ink: 0x1b1028,
@@ -465,19 +467,51 @@ async function buildProcessScene() {
   resizeProcess();
 }
 
+const sceneBuilders = {
+  play: buildPlayScene,
+  social: buildSocialScene,
+  cinema: buildCinemaScene
+};
+
+function ensureSceneBuilt(name) {
+  const sceneName = slideGroups[name] ? name : "play";
+  if (loadedScenes.has(sceneName)) return Promise.resolve();
+
+  if (!sceneBuildPromises[sceneName]) {
+    sceneBuildPromises[sceneName] = sceneBuilders[sceneName](slideGroups[sceneName])
+      .then(() => {
+        loadedScenes.add(sceneName);
+      })
+      .catch((error) => {
+        delete sceneBuildPromises[sceneName];
+        throw error;
+      });
+  }
+
+  return sceneBuildPromises[sceneName];
+}
+
 async function buildScene() {
   buildHeroShell();
 
-  await Promise.all([
-    buildPlayScene(slideGroups.play),
-    buildSocialScene(slideGroups.social),
-    buildCinemaScene(slideGroups.cinema)
-  ]);
+  const firstScene = slideGroups[activeScene] ? activeScene : "play";
+  await ensureSceneBuilt(firstScene);
 
   resize();
-  setScene(activeScene);
+  setScene(firstScene);
   initialized = true;
   mealStage.classList.add("has-three-ready");
+
+  Object.keys(sceneBuilders)
+    .filter((name) => name !== firstScene)
+    .forEach((name) => {
+      ensureSceneBuilt(name)
+        .then(() => {
+          if (activeScene === name) resize();
+        })
+        .catch((error) => console.warn(`PET PET LAND ${name} three fallback:`, error));
+    });
+
   buildProcessScene().catch((error) => console.warn("PET PET LAND process three fallback:", error));
 }
 
@@ -508,6 +542,14 @@ function setScene(name = "play") {
   Object.entries(slideGroups).forEach(([sceneName, group]) => {
     group.visible = sceneName === activeScene;
   });
+
+  if (initialized && !loadedScenes.has(activeScene)) {
+    ensureSceneBuilt(activeScene)
+      .then(() => {
+        if (visible && slideGroups[activeScene]) resize();
+      })
+      .catch((error) => console.warn(`PET PET LAND ${activeScene} three fallback:`, error));
+  }
 }
 
 function animateFloaters(time, floaters) {
