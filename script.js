@@ -3,14 +3,14 @@
 const slides = [
   {
     image: transparentImage,
-    alt: "主人和宠物在宠之岛玩耍",
+    alt: "各类陪伴宠物在宠之岛玩耍",
     three: true,
     scene: "play",
     burst: "一起撒欢",
     burstSmall: "PLAY DATE",
-    title: "主人和宠物一起玩的岛",
-    descOne: "白天一起奔跑、躲猫猫、训练小把戏，把精力释放在一个安全好玩的场地里。",
-    descTwo: "主人也不用只在旁边等，可以一起参与、拍照、交朋友。"
+    title: "所有陪伴宠物一起玩的岛",
+    descOne: "毛孩子、异宠、AI陪伴宠物和机器狗都可以登岛，在南京江北新区一起撒欢。",
+    descTwo: "现场会遇见更多带着陪伴类宠物来的朋友，一起玩、一起社交、一起进入电影夜。"
   },
   {
     image: transparentImage,
@@ -19,9 +19,9 @@ const slides = [
     scene: "social",
     burst: "宠友会客厅",
     burstSmall: "SOCIAL",
-    title: "宠物社交，主人也社交",
-    descOne: "给小家伙认识新伙伴，也给主人留一个轻松聊天的客厅。",
-    descTwo: "活动可以是生日局、领养分享、宠物摄影，也可以只是一起坐坐。"
+    title: "宠物社交，也欢迎AI宠物社交",
+    descOne: "毛孩子、异宠、机器狗和陪伴机器人都可以在这里认识新伙伴。",
+    descTwo: "活动可以是生日局、领养分享、宠物摄影，也可以是AI机器狗体验和宠友碰头。"
   },
   {
     image: transparentImage,
@@ -30,18 +30,18 @@ const slides = [
     scene: "cinema",
     burst: "宠物电影夜",
     burstSmall: "CINEMA",
-    title: "今晚带毛孩子一起看电影",
-    descOne: "南京江北新区宠物友好电影夜：低灯光、软垫位、可暂停，胆小宝也能慢慢适应。",
-    descTwo: "打卡、碰头、吃小零食、拍合照，把普通周末变成你和小可爱的专属约会。"
+    title: "今晚带陪伴宠物一起看电影",
+    descOne: "南京江北新区宠物友好电影夜：低灯光、软垫位、可暂停，胆小宝和机器狗都能慢慢适应。",
+    descTwo: "打卡、碰头、吃小零食、拍合照，把普通周末变成你和陪伴伙伴的专属约会。"
   }
 ];
 
 const steps = [
-  "到南京江北新区集合，先完成宠物入场和基础安全确认。",
-  "进入草坪撒欢区，一起跑、一起玩、一起把当天的能量释放掉。",
-  "转到宠友会客厅，主人聊天，宠物认识新朋友。",
+  "到南京江北新区集合，先完成毛孩子、异宠或AI陪伴宠物的入场确认。",
+  "进入草坪撒欢区，一起跑、一起玩，也可以围观机器狗小巡游。",
+  "转到宠友会客厅，主人聊天，宠物和AI陪伴伙伴认识新朋友。",
   "傍晚切到电影夜模式，选片、铺垫子、准备水和小零食。",
-  "一起看完电影再离岛，把这一天存进你们的共同记忆。"
+  "一起看完电影再离岛，把这一天存进你们和陪伴伙伴的共同记忆。"
 ];
 
 const markers = {
@@ -137,7 +137,7 @@ function updateStep(index) {
 
 function updateMap(mapName) {
   activeMap = mapName;
-  mapImage.src = mapName === "day" ? "assets/map-jiangbei.svg?v=20260701b" : "assets/map-pet-night.svg?v=20260701b";
+  mapImage.src = mapName === "day" ? "assets/map-jiangbei.svg?v=20260701d" : "assets/map-pet-night.svg?v=20260701d";
   mapImage.alt = mapName === "day" ? "南京江北新区 PET PET LAND 日间地图" : "南京江北新区 PET PET LAND 电影夜地图";
   document.querySelectorAll("[data-map]").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.map === mapName);

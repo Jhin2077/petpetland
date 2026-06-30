@@ -1,5 +1,5 @@
-﻿import * as THREE from "./assets/vendor/three/three.module.js?v=20260701b";
-import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260701b";
+﻿import * as THREE from "./assets/vendor/three/three.module.js?v=20260701d";
+import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260701d";
 
 const stage = document.querySelector("#threeStage");
 const mealStage = document.querySelector(".meal-stage");
@@ -189,6 +189,84 @@ function buildBall() {
   return group;
 }
 
+function buildAiBadge() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 192;
+  canvas.height = 96;
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "#ff2c21";
+  ctx.strokeStyle = "#050505";
+  ctx.lineWidth = 10;
+  const x = 8;
+  const y = 12;
+  const w = 176;
+  const h = 72;
+  const r = 24;
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.lineTo(x + w - r, y);
+  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+  ctx.lineTo(x + w, y + h - r);
+  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  ctx.lineTo(x + r, y + h);
+  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+  ctx.lineTo(x, y + r);
+  ctx.quadraticCurveTo(x, y, x + r, y);
+  ctx.fill();
+  ctx.stroke();
+  ctx.fillStyle = "#fff3cf";
+  ctx.font = "900 44px Arial Black, sans-serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText("AI", 96, 50);
+
+  const texture = new THREE.CanvasTexture(canvas);
+  texture.colorSpace = THREE.SRGBColorSpace;
+  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, transparent: true }));
+  sprite.scale.set(0.8, 0.4, 1);
+  return sprite;
+}
+
+function buildRobotDog(options = {}) {
+  const robot = new THREE.Group();
+  const body = roundedBox(1.05, 0.42, 0.46, palette.white);
+  const head = roundedBox(0.48, 0.36, 0.42, palette.cyan);
+  const neck = roundedBox(0.16, 0.26, 0.18, palette.ink);
+  setObject(body, { position: [0, 0.44, 0] });
+  setObject(neck, { position: [0.62, 0.5, 0] });
+  setObject(head, { position: [0.92, 0.58, 0] });
+  robot.add(body, neck, head);
+
+  [-0.34, 0.34].forEach((x) => {
+    [-0.16, 0.16].forEach((z) => {
+      const upper = roundedBox(0.13, 0.58, 0.13, palette.ink);
+      const foot = roundedBox(0.24, 0.12, 0.18, palette.red);
+      setObject(upper, { position: [x, 0.08, z], rotation: [0.08, 0, x > 0 ? -0.16 : 0.16] });
+      setObject(foot, { position: [x + (x > 0 ? 0.08 : -0.08), -0.24, z + 0.03] });
+      robot.add(upper, foot);
+    });
+  });
+
+  const eyeA = new THREE.Mesh(new THREE.SphereGeometry(0.045, 12, 8), mat(palette.ink));
+  const eyeB = eyeA.clone();
+  setObject(eyeA, { position: [1.16, 0.64, -0.11] });
+  setObject(eyeB, { position: [1.16, 0.64, 0.11] });
+  const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.34, 10), mat(palette.ink));
+  setObject(antenna, { position: [0.88, 0.9, 0], rotation: [0.12, 0, -0.22] });
+  const signal = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), mat(palette.red));
+  setObject(signal, { position: [0.82, 1.07, 0] });
+  const badge = buildAiBadge();
+  setObject(badge, { position: [0, 0.78, 0.28] });
+  robot.add(eyeA, eyeB, antenna, signal, badge);
+
+  setObject(robot, options);
+  robot.userData.baseY = robot.position.y;
+  robot.userData.floatPhase = options.floatPhase || 2.8;
+  robot.userData.floatAmount = options.floatAmount ?? 0.022;
+  floatingProps.push(robot);
+  return robot;
+}
+
 function buildTable() {
   const table = new THREE.Group();
   const top = roundedBox(1.7, 0.18, 1.1, palette.yellow);
@@ -234,32 +312,84 @@ function buildTray() {
 }
 
 async function buildPlayScene(group) {
-  group.add(buildPlatform(5.4, 3.35, palette.green, [-0.1, -0.52, 0.22]));
+  group.add(buildPlatform(6.15, 3.55, palette.green, [-0.1, -0.52, 0.22]));
   group.add(buildBall());
+  group.add(setObject(buildBall(), { position: [2.35, -0.04, 1.16], rotation: [0.08, -0.28, 0.12], scale: 0.62 }));
+  group.add(buildRobotDog({
+    position: [2.52, -0.2, 0.5],
+    rotation: [0, -0.68, 0],
+    scale: 0.84,
+    floatPhase: 4.8,
+    floatAmount: 0.028
+  }));
 
-  const [owner, dog, bunny] = await Promise.all([
-    loadCharacter("character-a.glb", {
-      position: [-1.6, -0.35, 0.16],
-      rotation: [0, 0.32, 0],
-      size: 2.35,
-      floatPhase: 0.1
-    }),
+  const [dog, cat, bunny, fox, panda, penguin, parrot, pig, lion] = await Promise.all([
     loadPet("animal-dog.glb", {
-      position: [0.68, -0.26, 0.92],
-      rotation: [0, -0.62, 0],
-      size: 1.18,
-      floatPhase: 1.2,
+      position: [-2.0, -0.26, 0.78],
+      rotation: [0, 0.48, 0],
+      size: 1.08,
+      floatPhase: 0.2,
       floatAmount: 0.04
     }),
+    loadPet("animal-cat.glb", {
+      position: [-0.96, -0.28, 1.08],
+      rotation: [0, 0.2, 0],
+      size: 0.82,
+      floatPhase: 0.9,
+      floatAmount: 0.035
+    }),
     loadPet("animal-bunny.glb", {
-      position: [2.0, -0.24, -0.42],
-      rotation: [0, -0.2, 0],
-      size: 0.9,
+      position: [0.08, -0.24, 1.02],
+      rotation: [0, -0.62, 0],
+      size: 0.78,
+      floatPhase: 1.2,
+      floatAmount: 0.035
+    }),
+    loadPet("animal-fox.glb", {
+      position: [1.02, -0.24, 0.78],
+      rotation: [0, -0.74, 0],
+      size: 0.82,
       floatPhase: 2.2,
       floatAmount: 0.035
+    }),
+    loadPet("animal-panda.glb", {
+      position: [-1.52, -0.25, -0.42],
+      rotation: [0, 0.2, 0],
+      size: 0.92,
+      floatPhase: 2.8,
+      floatAmount: 0.032
+    }),
+    loadPet("animal-penguin.glb", {
+      position: [-0.36, -0.24, -0.64],
+      rotation: [0, -0.12, 0],
+      size: 0.78,
+      floatPhase: 3.2,
+      floatAmount: 0.03
+    }),
+    loadPet("animal-parrot.glb", {
+      position: [0.82, -0.1, -0.58],
+      rotation: [0, -0.52, 0],
+      size: 0.72,
+      floatPhase: 3.7,
+      floatAmount: 0.045
+    }),
+    loadPet("animal-pig.glb", {
+      position: [1.88, -0.26, -0.26],
+      rotation: [0, -0.78, 0],
+      size: 0.86,
+      floatPhase: 4.1,
+      floatAmount: 0.032
+    }),
+    loadPet("animal-lion.glb", {
+      position: [2.72, -0.26, -0.72],
+      rotation: [0, -0.88, 0],
+      size: 0.78,
+      floatPhase: 4.4,
+      floatAmount: 0.032
     })
   ]);
-  group.add(owner, dog, bunny);
+
+  group.add(dog, cat, bunny, fox, panda, penguin, parrot, pig, lion);
 }
 
 async function buildSocialScene(group) {
@@ -495,7 +625,11 @@ async function buildScene() {
   buildHeroShell();
 
   const firstScene = slideGroups[activeScene] ? activeScene : "play";
-  await ensureSceneBuilt(firstScene);
+  ensureSceneBuilt(firstScene)
+    .then(() => {
+      if (activeScene === firstScene) resize();
+    })
+    .catch((error) => console.warn(`PET PET LAND ${firstScene} three fallback:`, error));
 
   resize();
   setScene(firstScene);
