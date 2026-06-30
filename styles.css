@@ -260,7 +260,7 @@ a {
   width: 100%;
 }
 
-.meal-stage.is-three-slide.has-three-ready img {
+.meal-stage.is-three-slide img {
   opacity: 0;
   pointer-events: none;
   position: absolute;

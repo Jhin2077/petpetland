@@ -1,5 +1,5 @@
-﻿import * as THREE from "./assets/vendor/three/three.module.js?v=20260701a";
-import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260701a";
+﻿import * as THREE from "./assets/vendor/three/three.module.js?v=20260701b";
+import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260701b";
 
 const stage = document.querySelector("#threeStage");
 const mealStage = document.querySelector(".meal-stage");

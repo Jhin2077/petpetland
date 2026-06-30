@@ -1,6 +1,8 @@
-﻿const slides = [
+﻿const transparentImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
+
+const slides = [
   {
-    image: "assets/pet-play.svg?v=20260701a",
+    image: transparentImage,
     alt: "主人和宠物在宠之岛玩耍",
     three: true,
     scene: "play",
@@ -11,7 +13,7 @@
     descTwo: "主人也不用只在旁边等，可以一起参与、拍照、交朋友。"
   },
   {
-    image: "assets/pet-social.svg?v=20260701a",
+    image: transparentImage,
     alt: "主人和宠物在宠友会客厅社交",
     three: true,
     scene: "social",
@@ -22,7 +24,7 @@
     descTwo: "活动可以是生日局、领养分享、宠物摄影，也可以只是一起坐坐。"
   },
   {
-    image: "assets/pet-snack-tray.svg?v=20260701a",
+    image: transparentImage,
     alt: "宠之岛电影夜热狗薯条托盘",
     three: true,
     scene: "cinema",
@@ -135,7 +137,7 @@ function updateStep(index) {
 
 function updateMap(mapName) {
   activeMap = mapName;
-  mapImage.src = mapName === "day" ? "assets/map-jiangbei.svg?v=20260701a" : "assets/map-pet-night.svg?v=20260701a";
+  mapImage.src = mapName === "day" ? "assets/map-jiangbei.svg?v=20260701b" : "assets/map-pet-night.svg?v=20260701b";
   mapImage.alt = mapName === "day" ? "南京江北新区 PET PET LAND 日间地图" : "南京江北新区 PET PET LAND 电影夜地图";
   document.querySelectorAll("[data-map]").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.map === mapName);
