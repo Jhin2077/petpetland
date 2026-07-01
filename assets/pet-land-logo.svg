@@ -1,18 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 190" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 190" role="img" aria-labelledby="title desc" text-rendering="geometricPrecision" shape-rendering="geometricPrecision">
   <title id="title">PET PET LAND 宠之岛 logo</title>
   <desc id="desc">Chunky comic logo with a dog paw mark for a pet and owner social island.</desc>
-  <defs>
-    <filter id="shadow" x="-12%" y="-12%" width="135%" height="140%">
-      <feOffset dx="0" dy="8" in="SourceAlpha" result="off"/>
-      <feColorMatrix in="off" result="black" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0"/>
-      <feMerge>
-        <feMergeNode in="black"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-  </defs>
   <rect width="640" height="190" fill="none"/>
-  <g filter="url(#shadow)">
+  <g>
+    <text x="320" y="112" text-anchor="middle"
+      font-family="Arial Black, Impact, sans-serif"
+      font-size="70" font-weight="900"
+      fill="#050505" stroke="#050505" stroke-width="12" paint-order="stroke fill">
+      PET PET LAND
+    </text>
     <text x="320" y="104" text-anchor="middle"
       font-family="Arial Black, Impact, sans-serif"
       font-size="70" font-weight="900"

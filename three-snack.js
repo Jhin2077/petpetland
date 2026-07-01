@@ -1,5 +1,5 @@
-﻿import * as THREE from "./assets/vendor/three/three.module.js?v=20260701d";
-import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260701d";
+import * as THREE from "./assets/vendor/three/three.module.js?v=20260701j";
+import { GLTFLoader } from "./assets/vendor/three/GLTFLoader.js?v=20260701j";
 
 const stage = document.querySelector("#threeStage");
 const mealStage = document.querySelector(".meal-stage");
@@ -189,84 +189,6 @@ function buildBall() {
   return group;
 }
 
-function buildAiBadge() {
-  const canvas = document.createElement("canvas");
-  canvas.width = 192;
-  canvas.height = 96;
-  const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "#ff2c21";
-  ctx.strokeStyle = "#050505";
-  ctx.lineWidth = 10;
-  const x = 8;
-  const y = 12;
-  const w = 176;
-  const h = 72;
-  const r = 24;
-  ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.lineTo(x + w - r, y);
-  ctx.quadraticCurveTo(x + w, y, x + w, y + r);
-  ctx.lineTo(x + w, y + h - r);
-  ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
-  ctx.lineTo(x + r, y + h);
-  ctx.quadraticCurveTo(x, y + h, x, y + h - r);
-  ctx.lineTo(x, y + r);
-  ctx.quadraticCurveTo(x, y, x + r, y);
-  ctx.fill();
-  ctx.stroke();
-  ctx.fillStyle = "#fff3cf";
-  ctx.font = "900 44px Arial Black, sans-serif";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText("AI", 96, 50);
-
-  const texture = new THREE.CanvasTexture(canvas);
-  texture.colorSpace = THREE.SRGBColorSpace;
-  const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ map: texture, transparent: true }));
-  sprite.scale.set(0.8, 0.4, 1);
-  return sprite;
-}
-
-function buildRobotDog(options = {}) {
-  const robot = new THREE.Group();
-  const body = roundedBox(1.05, 0.42, 0.46, palette.white);
-  const head = roundedBox(0.48, 0.36, 0.42, palette.cyan);
-  const neck = roundedBox(0.16, 0.26, 0.18, palette.ink);
-  setObject(body, { position: [0, 0.44, 0] });
-  setObject(neck, { position: [0.62, 0.5, 0] });
-  setObject(head, { position: [0.92, 0.58, 0] });
-  robot.add(body, neck, head);
-
-  [-0.34, 0.34].forEach((x) => {
-    [-0.16, 0.16].forEach((z) => {
-      const upper = roundedBox(0.13, 0.58, 0.13, palette.ink);
-      const foot = roundedBox(0.24, 0.12, 0.18, palette.red);
-      setObject(upper, { position: [x, 0.08, z], rotation: [0.08, 0, x > 0 ? -0.16 : 0.16] });
-      setObject(foot, { position: [x + (x > 0 ? 0.08 : -0.08), -0.24, z + 0.03] });
-      robot.add(upper, foot);
-    });
-  });
-
-  const eyeA = new THREE.Mesh(new THREE.SphereGeometry(0.045, 12, 8), mat(palette.ink));
-  const eyeB = eyeA.clone();
-  setObject(eyeA, { position: [1.16, 0.64, -0.11] });
-  setObject(eyeB, { position: [1.16, 0.64, 0.11] });
-  const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.34, 10), mat(palette.ink));
-  setObject(antenna, { position: [0.88, 0.9, 0], rotation: [0.12, 0, -0.22] });
-  const signal = new THREE.Mesh(new THREE.SphereGeometry(0.07, 12, 8), mat(palette.red));
-  setObject(signal, { position: [0.82, 1.07, 0] });
-  const badge = buildAiBadge();
-  setObject(badge, { position: [0, 0.78, 0.28] });
-  robot.add(eyeA, eyeB, antenna, signal, badge);
-
-  setObject(robot, options);
-  robot.userData.baseY = robot.position.y;
-  robot.userData.floatPhase = options.floatPhase || 2.8;
-  robot.userData.floatAmount = options.floatAmount ?? 0.022;
-  floatingProps.push(robot);
-  return robot;
-}
-
 function buildTable() {
   const table = new THREE.Group();
   const top = roundedBox(1.7, 0.18, 1.1, palette.yellow);
@@ -302,12 +224,6 @@ function buildTray() {
   setObject(rightLip, { position: [3.58, 0.36, 0] });
   tray.add(backLip, frontLip, leftLip, rightLip);
 
-  const matA = roundedBox(2.36, 0.16, 1.18, palette.cyan);
-  const matB = roundedBox(1.24, 0.16, 1.0, palette.yellow);
-  setObject(matA, { position: [1.2, 0.46, 1.02], rotation: [0, -0.12, 0] });
-  setObject(matB, { position: [-2.24, 0.46, 1.05], rotation: [0, 0.16, 0] });
-  tray.add(matA, matB);
-
   return setObject(tray, { position: [0, -0.78, 0], rotation: [-0.13, 0.08, -0.11], scale: 0.94 });
 }
 
@@ -315,14 +231,6 @@ async function buildPlayScene(group) {
   group.add(buildPlatform(6.15, 3.55, palette.green, [-0.1, -0.52, 0.22]));
   group.add(buildBall());
   group.add(setObject(buildBall(), { position: [2.35, -0.04, 1.16], rotation: [0.08, -0.28, 0.12], scale: 0.62 }));
-  group.add(buildRobotDog({
-    position: [2.52, -0.2, 0.5],
-    rotation: [0, -0.68, 0],
-    scale: 0.84,
-    floatPhase: 4.8,
-    floatAmount: 0.028
-  }));
-
   const [dog, cat, bunny, fox, panda, penguin, parrot, pig, lion] = await Promise.all([
     loadPet("animal-dog.glb", {
       position: [-2.0, -0.26, 0.78],

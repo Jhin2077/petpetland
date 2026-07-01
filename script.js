@@ -1,4 +1,4 @@
-﻿const transparentImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
+const transparentImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3C/svg%3E";
 
 const slides = [
   {
@@ -8,7 +8,7 @@ const slides = [
     scene: "play",
     burst: "一起撒欢",
     burstSmall: "PLAY DATE",
-    title: "所有陪伴宠物一起玩的岛",
+    title: "所有陪伴宠物一起玩",
     descOne: "毛孩子、异宠、AI陪伴宠物和机器狗都可以登岛，在南京江北新区一起撒欢。",
     descTwo: "现场会遇见更多带着陪伴类宠物来的朋友，一起玩、一起社交、一起进入电影夜。"
   },
@@ -19,7 +19,7 @@ const slides = [
     scene: "social",
     burst: "宠友会客厅",
     burstSmall: "SOCIAL",
-    title: "宠物社交，也欢迎AI宠物社交",
+    title: "宠物社交，同时也有AI宠物社交",
     descOne: "毛孩子、异宠、机器狗和陪伴机器人都可以在这里认识新伙伴。",
     descTwo: "活动可以是生日局、领养分享、宠物摄影，也可以是AI机器狗体验和宠友碰头。"
   },
@@ -57,8 +57,29 @@ const markers = {
   ]
 };
 
+const qrChannels = {
+  wechat: {
+    title: "加入微信群",
+    text: "扫码进入 PET PET LAND 微信群，活动通知、集合位置和入场提醒都会在群里同步。",
+    image: "assets/wechat-qr.png?v=20260701j",
+    alt: "PET PET LAND 微信群二维码"
+  },
+  xiaohongshu: {
+    title: "小红书联系",
+    text: "扫码加入 PET PET LAND 小红书群，查看活动预告、现场照片和报名更新。",
+    image: "assets/xiaohongshu-qr.png?v=20260701j",
+    alt: "PET PET LAND 小红书群二维码"
+  },
+  douyin: {
+    title: "抖音粉丝群",
+    text: "抖音粉丝群即将开放。现在可以先加入微信群或小红书群，和我们一起等下一次登岛。",
+    image: ""
+  }
+};
+
 let activeSlide = 0;
 let activeMap = "day";
+let lastQrTrigger = null;
 
 const preloader = document.querySelector("#preloader");
 const startButton = document.querySelector("#startButton");
@@ -81,6 +102,11 @@ const markerTitle = document.querySelector("#markerTitle");
 const markerDistance = document.querySelector("#markerDistance");
 const markerRa = document.querySelector("#markerRa");
 const markerDec = document.querySelector("#markerDec");
+const qrModal = document.querySelector("#qrModal");
+const qrModalTitle = document.querySelector("#qrModalTitle");
+const qrModalText = document.querySelector("#qrModalText");
+const qrModalImage = document.querySelector("#qrModalImage");
+const qrModalPlaceholder = document.querySelector("#qrModalPlaceholder");
 const canvas = document.querySelector("#spaceCanvas");
 const context = canvas.getContext("2d");
 
@@ -137,7 +163,7 @@ function updateStep(index) {
 
 function updateMap(mapName) {
   activeMap = mapName;
-  mapImage.src = mapName === "day" ? "assets/map-jiangbei.svg?v=20260701d" : "assets/map-pet-night.svg?v=20260701d";
+  mapImage.src = mapName === "day" ? "assets/map-jiangbei.svg?v=20260701j" : "assets/map-pet-night.svg?v=20260701j";
   mapImage.alt = mapName === "day" ? "南京江北新区 PET PET LAND 日间地图" : "南京江北新区 PET PET LAND 电影夜地图";
   document.querySelectorAll("[data-map]").forEach((button) => {
     button.classList.toggle("is-active", button.dataset.map === mapName);
@@ -204,6 +230,31 @@ function onScroll() {
   siteHeader.classList.toggle("is-solid", window.scrollY > 120);
 }
 
+function openQrModal(channelName, trigger) {
+  const channel = qrChannels[channelName] || qrChannels.xiaohongshu;
+  lastQrTrigger = trigger;
+  qrModalTitle.textContent = channel.title;
+  qrModalText.textContent = channel.text;
+
+  if (channel.image) {
+    qrModalImage.src = channel.image;
+    qrModalImage.alt = channel.alt || `${channel.title}二维码`;
+    qrModalImage.hidden = false;
+    qrModalPlaceholder.hidden = true;
+  } else {
+    qrModalImage.hidden = true;
+    qrModalPlaceholder.hidden = false;
+  }
+
+  qrModal.hidden = false;
+  qrModal.querySelector(".qr-modal__close").focus();
+}
+
+function closeQrModal() {
+  qrModal.hidden = true;
+  lastQrTrigger?.focus();
+}
+
 startButton.addEventListener("click", hidePreloader);
 soundButton.addEventListener("click", toggleSound);
 menuButton.addEventListener("click", () => {
@@ -233,8 +284,21 @@ document.querySelectorAll(".marker").forEach((button) => {
   button.addEventListener("click", () => updateMarker(Number(button.dataset.marker)));
 });
 
+document.querySelectorAll("[data-qr]").forEach((button) => {
+  button.addEventListener("click", () => openQrModal(button.dataset.qr, button));
+});
+
+document.querySelectorAll("[data-qr-close]").forEach((button) => {
+  button.addEventListener("click", closeQrModal);
+});
+
 window.addEventListener("scroll", onScroll, { passive: true });
 window.addEventListener("resize", drawSpace);
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !qrModal.hidden) {
+    closeQrModal();
+  }
+});
 
 renderDots();
 drawSpace();
